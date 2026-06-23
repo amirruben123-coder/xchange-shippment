@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --line: rgba(232,237,242,0.08);
+}
+
+@layer base {
+  body { @apply bg-bg text-white font-sans antialiased; }
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { @apply bg-transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-panel2 rounded-full; }
+}
+
+@layer components {
+  .card { @apply bg-panel border border-white/[0.08] rounded-2xl; }
+  .btn { @apply inline-flex items-center justify-content-center gap-1.5 rounded-lg px-5 py-2.5 text-sm font-semibold transition-all duration-200 cursor-pointer border border-transparent disabled:opacity-50 disabled:cursor-not-allowed; }
+  .btn-primary { @apply bg-accent text-[#1A1006] hover:bg-accent2 hover:-translate-y-px; }
+  .btn-outline { @apply border-white/10 text-white hover:border-accent hover:text-accent; }
+  .btn-danger { @apply bg-red-500/10 border-red-500/30 text-red-400 hover:bg-red-500/20; }
+  .btn-success { @apply bg-green-500/10 border-green-500/30 text-green-400 hover:bg-green-500/20; }
+  .btn-sm { @apply px-3.5 py-1.5 text-xs; }
+  .btn-lg { @apply px-7 py-3.5 text-base rounded-xl; }
+  .input { @apply w-full bg-bg border border-white/[0.08] rounded-lg px-4 py-2.5 text-sm text-white placeholder-muted outline-none focus:border-accent transition-colors; }
+  .select { @apply w-full bg-bg border border-white/[0.08] rounded-lg px-4 py-2.5 text-sm text-white outline-none focus:border-accent transition-colors appearance-none; }
+  .label { @apply block text-xs font-medium text-muted mb-1.5; }
+  .badge { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold; }
+  .section-tag { @apply inline-block bg-accent/10 border border-accent/25 rounded-full px-3.5 py-1 text-xs font-bold uppercase tracking-widest text-accent; }
+  .tbl { @apply w-full text-sm border-collapse; }
+  .tbl th { @apply text-left text-xs font-medium text-muted px-4 py-3 border-b border-white/[0.08] whitespace-nowrap; }
+  .tbl td { @apply px-4 py-3 border-b border-white/[0.08]; }
+  .tbl tbody tr:last-child td { @apply border-b-0; }
+  .tbl tbody tr:hover td { @apply bg-white/[0.015]; }
+}
