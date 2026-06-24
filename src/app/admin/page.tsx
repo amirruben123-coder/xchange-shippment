@@ -82,7 +82,7 @@ export default async function AdminPage() {
                       <td className="text-xs text-muted">{u.email}</td>
                       <td><span className={`badge ${STATUS_BADGE[u.role] || ''}`}>{u.role.replace(/_/g, ' ')}</span></td>
                       <td><span className={`badge ${STATUS_BADGE[u.status] || ''}`}>{u.status}</span></td>
-                      <td className="font-mono text-xs">{fmtMoney(u.wallet)}</td>
+                      <td className="font-mono text-xs">{fmtMoney(u.wallet.toNumber())}</td>
                       <td className="text-xs text-warning">{u.points.toLocaleString()}</td>
                       <td className="text-xs text-muted">{fmtDate(u.createdAt)}</td>
                     </tr>
@@ -110,7 +110,7 @@ export default async function AdminPage() {
                       <td className="text-sm">{s.owner.name}</td>
                       <td className="text-xs text-muted max-w-[160px] truncate">{s.destination}</td>
                       <td><span className={`badge ${STATUS_BADGE[s.status] || ''}`}>{s.status.replace(/_/g, ' ')}</span></td>
-                      <td className="font-mono text-xs">{fmtMoney(s.cost)}</td>
+                      <td className="font-mono text-xs">{fmtMoney(s.cost.toNumber())}</td>
                       <td className="text-xs text-muted">{fmtDate(s.createdAt)}</td>
                     </tr>
                   ))}
@@ -168,7 +168,7 @@ export default async function AdminPage() {
                       </td>
                       <td className="text-xs text-muted">{t.source.replace(/_/g, ' ')}</td>
                       <td className={`font-mono text-xs ${t.type === 'CREDIT' ? 'text-success' : 'text-danger'}`}>
-                        {t.type === 'CREDIT' ? '+' : '-'}{fmtMoney(t.amount)}
+                        {t.type === 'CREDIT' ? '+' : '-'}{fmtMoney(t.amount.toNumber())}
                       </td>
                       <td className="text-xs text-warning">{t.points > 0 ? t.points : '—'}</td>
                       <td className="text-xs text-muted">{fmtDate(t.createdAt)}</td>

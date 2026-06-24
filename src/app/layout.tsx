@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import NextAuthProvider from '@/components/layout/SessionProvider'
 
 export const metadata: Metadata = {
   title: 'Xchangeshippment — Empower Your Logistics Business',
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning><NextAuthProvider>{children}</NextAuthProvider></body>
     </html>
   )
 }

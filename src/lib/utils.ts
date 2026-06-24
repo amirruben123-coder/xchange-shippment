@@ -1,5 +1,5 @@
-export const fmtMoney = (n: number | string) =>
-  '$' + Number(n).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+export const fmtMoney = (n: number | string | { toNumber(): number }) =>
+  '$' + Number(typeof n === 'object' ? n.toNumber() : n).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 
 export const fmtDate = (d: Date | string) =>
   new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
