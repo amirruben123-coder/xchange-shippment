@@ -3,7 +3,7 @@ import Credentials from 'next-auth/providers/credentials'
 import bcrypt from 'bcryptjs'
 import { prisma } from '@/lib/prisma'
 
-export const { handlers, auth, signIn, signOut } = NextAuth({
+export const { handlers, auth, signIn, signOut } = NextAuth({trusthost:true
   session: { strategy: 'jwt' },
   pages: { signIn: '/login' },
   callbacks: {
