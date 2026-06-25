@@ -36,8 +36,6 @@ export default function LoginPage() {
           <div className="bg-bg2 border border-white/[0.08] rounded-xl p-4 mb-6 text-xs">
             <div className="font-semibold text-accent2 mb-2">🔑 Demo accounts</div>
             <div className="text-muted space-y-1">
-              <div><span className="text-white/60">Admin:</span> brightolisaeneh@gmail.com / Admin@2024!</div>
-              <div><span className="text-white/60">Customer:</span> demo@xchangeshippment.com / Demo@2024!</div>
             </div>
           </div>
 
