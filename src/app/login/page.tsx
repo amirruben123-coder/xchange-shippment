@@ -32,16 +32,42 @@ export default function LoginPage() {
         <div className="card p-8">
           <h1 className="font-display text-2xl font-bold mb-1">Welcome back</h1>
           <p className="text-sm text-muted mb-6">Sign in to manage your shipments, wallet, and more.</p>
-          </div>
-          {error && <div className="bg-red-500/10 border border-red-500/25 rounded-lg p-3 text-sm text-red-400 mb-4">{error}</div>}
+          {error && (
+            <div className="bg-red-500/10 border border-red-500/25 rounded-lg p-3 text-sm text-red-400 mb-4">
+              {error}
+            </div>
+          )}
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div><label className="label">Email</label><input type="email" value={email} onChange={e=>setEmail(e.target.value)} className="input" placeholder="you@example.com" required /></div>
-            <div><label className="label">Password</label><input type="password" value={password} onChange={e=>setPassword(e.target.value)} className="input" placeholder="••••••••" required /></div>
+            <div>
+              <label className="label">Email</label>
+              <input
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                className="input"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <div>
+              <label className="label">Password</label>
+              <input
+                type="password"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                className="input"
+                placeholder="••••••••"
+                required
+              />
+            </div>
             <button type="submit" disabled={loading} className="btn btn-primary w-full py-3">
               {loading ? 'Signing in...' : 'Sign in'}
             </button>
           </form>
-          <p className="text-center text-sm text-muted mt-5">Don't have an account? <Link href="/register" className="text-accent2 hover:underline">Create one</Link></p>
+          <p className="text-center text-sm text-muted mt-5">
+            Don't have an account?{' '}
+            <Link href="/register" className="text-accent2 hover:underline">Create one</Link>
+          </p>
         </div>
       </div>
     </div>
