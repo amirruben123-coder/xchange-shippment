@@ -32,11 +32,6 @@ export default function LoginPage() {
         <div className="card p-8">
           <h1 className="font-display text-2xl font-bold mb-1">Welcome back</h1>
           <p className="text-sm text-muted mb-6">Sign in to manage your shipments, wallet, and more.</p>
-          
-          <div className="bg-bg2 border border-white/[0.08] rounded-xl p-4 mb-6 text-xs">
-            <div className="font-semibold text-accent2 mb-2">🔑 Demo accounts</div>
-            <div className="text-muted space-y-1">
-            </div>
           </div>
           {error && <div className="bg-red-500/10 border border-red-500/25 rounded-lg p-3 text-sm text-red-400 mb-4">{error}</div>}
           <form onSubmit={handleSubmit} className="space-y-4">
