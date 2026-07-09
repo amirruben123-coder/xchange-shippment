@@ -6,7 +6,7 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-}
+
 enum Role {
   SUPER_ADMIN
   CUSTOMER
@@ -86,12 +86,12 @@ model User {
   createdAt    DateTime   @default(now())
   updatedAt    DateTime   @updatedAt
 
-  shipments     Shipment[]
-  bookings      Booking[]
-  invoices      Invoice[]
-  transactions  Transaction[]
-  tickets       Ticket[]
-  notifications Notification[]
+  shipments      Shipment[]
+  bookings       Booking[]
+  invoices       Invoice[]
+  transactions   Transaction[]
+  tickets        Ticket[]
+  notifications  Notification[]
   ticketMessages TicketMessage[]
 }
 
